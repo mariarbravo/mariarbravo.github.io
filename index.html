@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maria Bravo | Software Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Maria Bravo</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li class="dropdown">
+          <a href="#">Projects ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="#web">Web Dev</a></li>
+            <li><a href="#verilog">Verilog</a></li>
+            <li><a href="#data">Data</a></li>
+          </ul>
+        </li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <h1>Hi, I'm Maria</h1>
+    <p>Aspiring Software Engineer passionate about building cool things.</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a student software engineer with experience in digital logic, data engineering, and full-stack development. I love learning new technologies and building things that help people.</p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-category" id="web">
+      <h3>🌐 Web Development</h3>
+      <ul>
+        <li><strong>Personal Portfolio</strong> – This very site! Built with HTML/CSS/JS</li>
+        <li><strong>Food Recommender App</strong> – Nutrition & portion-based healthy food app using Streamlit</li>
+      </ul>
+    </div>
+
+    <div class="project-category" id="verilog">
+      <h3>⚙️ Digital Logic</h3>
+      <ul>
+        <li><strong>Vending Machine FSM</strong> – A 25¢ vending machine FSM built in Verilog</li>
+        <li><strong>Ping Pong Game</strong> – Light pattern game on Nexys4 DDR board</li>
+      </ul>
+    </div>
+
+    <div class="project-category" id="data">
+      <h3>📊 Data Projects</h3>
+      <ul>
+        <li><strong>Food & Health Dataset</strong> – Combined nutrition, price, and portion data into a usable dataset</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Click below to download my resume:</p>
+    <a href="assets/resume.pdf" class="btn" target="_blank">Download Resume</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me via <a href="mailto:mariabravo@example.com">email</a> or connect with me on <a href="https://linkedin.com/in/mariarbravo" target="_blank">LinkedIn</a>.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Maria Bravo. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
