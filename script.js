@@ -9,4 +9,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-console.log("Welcome to Maria Bravo's Portfolio Site ✨");
+console.log("Welcome to Maria Bravo's Portfolio Site");
