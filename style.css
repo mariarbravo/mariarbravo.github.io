@@ -83,8 +83,9 @@ body {
 
 /* Hero Section */
 #hero {
+  height: 100vh;
+  display: flex;
   text-align: center;
-  padding: 5rem 2rem;
   background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
   color: white;
 }
