@@ -83,8 +83,15 @@ body {
 
 /* Hero Section */
 #hero {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ff1e1e, #330000);
+  min-height: 100vh;     
+  width: 100vw;           
+  background: linear-gradient(
+    135deg, 
+    #ff0000 0%, 
+    #990000 40%, 
+    #330000 75%, 
+    #000000 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
