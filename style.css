@@ -98,7 +98,15 @@ body {
   text-align: center;
   padding: 0;
 }
-
+#hero-image {
+  flex = 1;
+  display = flex;
+  justify-content = flex-end;
+}
+#hero-image img {
+  max-width = 100%;
+  height = auto;
+}
 #hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
