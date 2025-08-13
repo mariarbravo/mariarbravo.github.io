@@ -86,10 +86,10 @@ body {
   min-height: 100vh;     
   background: linear-gradient(
     135deg, 
-    #ff0000 0%, 
-    #990000 40%, 
-    #330000 75%, 
-    #000000 100%
+    #000000 0%, 
+    #000033 30%, 
+    #000066 60%, 
+    #0000ff 100%);
   );
   display: flex;
   align-items: center;
