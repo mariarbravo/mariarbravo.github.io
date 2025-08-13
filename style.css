@@ -82,7 +82,7 @@ body {
 }
 
 /* Hero Section */
-.hero {
+#hero {
   min-height: 100vh;
   background: linear-gradient(135deg, #000000, #ff416c);
   display: flex;
