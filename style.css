@@ -31,7 +31,7 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #444;
+  color: #000;
 }
 
 .nav-links {
@@ -47,13 +47,13 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #000;
   font-weight: 500;
   padding: 0.5rem;
 }
 
 .nav-links a:hover {
-  color: #0077cc;
+  color: #000000;
 }
 
 /* Dropdown */
