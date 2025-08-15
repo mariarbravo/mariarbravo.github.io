@@ -53,7 +53,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Dropdown */
@@ -62,7 +62,7 @@ body {
   position: absolute;
   top: 2rem;
   left: 0;
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 0.5rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
