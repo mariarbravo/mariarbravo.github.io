@@ -199,16 +199,10 @@ footer {
   color: #666;
 }
 #hero-aboutme {
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    #000000 0%, 
-    #000033 30%, 
-    #000066 60%, 
-    #0000ff 100%
-  );
+  background: 0000ff;
 }
