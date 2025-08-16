@@ -33,6 +33,12 @@ body {
   font-weight: bold;
   color: #FFFFFF;
 }
+.logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+}
 
 .nav-links {
   list-style: none;
