@@ -99,7 +99,8 @@ body {
 
 .hero-container {
   display: flex;
-  align-items: center;
+  align-items: left;
+  justify-content: center;
   gap: 2rem;
   max-width: 1200px;
   width: 100%;
