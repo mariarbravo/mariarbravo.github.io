@@ -208,13 +208,13 @@ footer {
     135deg,
     #000000 0%, 
     #000033 30%, 
-    #000066 60%, 
+    #000066 80%, 
     #0000ff 100%
   );
 }
 
 #hero-aboutme h4{
   color: #FFFFFF;
-  font-size: 10rem;
+  font-size: 7rem;
   text-align: center;
 }
