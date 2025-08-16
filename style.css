@@ -108,7 +108,7 @@ body {
 .overlay-text {
   flex: 1;
   color: white;
-  text-align: left;
+  text-align: center;
 }
 
 .overlay-text h1 {
