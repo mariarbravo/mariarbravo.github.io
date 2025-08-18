@@ -205,15 +205,15 @@ footer {
 #hero-aboutme {
   min-height: 10vh;
   display: flex;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   padding: 2rem;
-  background:#C1D7F0;
+  background:#FFFFFF;
 }
 
 #hero-aboutme h4{
-  color: #000066;
-  font-size: 1.5rem;
+  color: #000000;
+  font-size: 3rem;
 }
 
 /* About Me Section */
