@@ -203,7 +203,7 @@ footer {
 
 /* ABOUT ME PAGE STYLING */
 #hero-aboutme {
-  min-height: 5vh;
+  min-height: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
