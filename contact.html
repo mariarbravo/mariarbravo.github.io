@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maria Ruiz Bravo | Software Engineer</title>
+  <title>Contact | Maria Ruiz Bravo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href= index.html> Maria Ruiz Bravo</a>
+        <a href="index.html">Maria Ruiz Bravo</a>
       </div>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li class="dropdown">
-          <a href="#">Projects ▼</a>
+          <a href="project.html">Projects ▼</a>
           <ul class="dropdown-menu">
             <li><a href="pandas.html">Nutritional</a></li>
           </ul>
@@ -27,9 +27,57 @@
     </nav>
   </header>
 
-<section id="hero-sections">
-<h4> CONTACT ME </h4>
-</section>
+  <!-- Hero Section -->
+  <section id="hero-contact">
+    <h4>CONTACT ME</h4>
+    <p>Have a project in mind or just want to say hi? Feel free to reach out!</p>
+  </section>
+
+  <!-- Contact Form Section -->
+  <main class="contact-container">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:maria@example.com">maria@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
+      <p>Phone: +1 (123) 456-7890</p>
+    </div>
+
+    <div class="contact-form">
+      <form action="mailto:maria@example.com" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Maria Ruiz Bravo. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetID = this.getAttribute('href');
+        const targetElement = document.querySelector(targetID);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Auto year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
 
