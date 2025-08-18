@@ -275,21 +275,25 @@ footer {
   background: #000099;
 }
 
+/* Projects Container */
 .projects-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 4rem auto;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
 }
 
-/* Each project section */
+/* Project Section Base */
 .project-section {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 2rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -298,53 +302,63 @@ footer {
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* Project title */
-.project-section h2 {
-  font-size: 1.8rem;
-  color: #000066;
+/* Split layout for image and text */
+.project-section .project-image {
+  flex: 1;
+  max-width: 45%;
+}
+
+.project-section .project-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.project-section .project-info {
+  flex: 1;
+  max-width: 50%;
+  padding: 0 2rem;
+}
+
+.project-section .project-info h2 {
+  font-size: 2rem;
+  color: #000066; /* dark pop color for title */
   margin-bottom: 1rem;
 }
 
-/* Project content layout */
-.project-content {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* Project images */
-.project-content img {
-  width: 300px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid #e0e0e0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.project-content img:hover {
-  transform: scale(1.03);
-}
-
-/* Project text */
-.project-content p {
-  flex: 1;
+.project-section .project-info p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #333;
 }
 
-/* Responsive layout for smaller screens */
+/* Alternating layout: even-numbered sections reverse */
+.project-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Add a pop of background color on hover or highlight */
+.project-section:nth-child(odd) .project-info {
+  background: rgba(192, 215, 240, 0.1); /* soft blue behind text */
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.project-section:nth-child(even) .project-info {
+  background: rgba(255, 200, 150, 0.1); /* soft orange behind text */
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* Responsive for mobile */
 @media (max-width: 768px) {
-  .project-content {
-    flex-direction: column;
-    text-align: center;
+  .project-section {
+    flex-direction: column !important;
   }
 
-  .project-content p {
-    margin-top: 1rem;
+  .project-section .project-image,
+  .project-section .project-info {
+    max-width: 100%;
+    padding: 1rem 0;
   }
 }
