@@ -202,7 +202,7 @@ footer {
 
 
 /* ABOUT ME PAGE STYLING */
-#hero-aboutme {
+#hero-sections {
   min-height: 3vh;
   display: flex;
   justify-content: center;
@@ -212,7 +212,7 @@ footer {
   background:#FFFFFF;
 }
 
-#hero-aboutme h4{
+#hero-sections h4{
   color: #000000;
   font-size: 2rem;
   text-align: center;
