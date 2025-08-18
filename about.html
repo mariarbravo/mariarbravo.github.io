@@ -1,66 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About — Maria Ruiz Bravo</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Maria Ruiz Bravo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">Maria Ruiz Bravo</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <a href="index.html">Maria Ruiz Bravo</a>
-        </div>
-        <ul class="nav-links">
-          <li><a href="about.html">About</a></li>
-          <li class="dropdown">
-            <a href="#">Projects ▼</a>
-            <ul class="dropdown-menu">
-              <li><a href="pandas.html">Nutritional</a></li>
-            </ul>
-          </li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Maria!</h1>
+      <p>A passionate Software Engineering student building creative & impactful projects.</p>
+    </div>
+  </section>
 
-    <main class="about-page">
-      <!-- Intro -->
-      <section id="about" class="about-intro">
-        <h1>About Me</h1>
-        <p>
-          Hi, I’m Maria Ruiz Bravo. I’m a Software Engineering student with a passion for building
-          projects that combine clean design with solid functionality. From FPGA labs and Verilog
-          state machines to data engineering and web development, I enjoy creating things that
-          actually work and look good.
-        </p>
-      </section>
+  <!-- About Me Section -->
+  <section id="about-me">
+    <img src="your-photo.jpg" alt="Maria Ruiz Bravo">
+    <div id="about-me-text">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m Maria! I’m a Software Engineering student with a strong interest in 
+        web development, data engineering, and digital logic design. I love creating 
+        clean and efficient solutions while exploring the intersection of technology, 
+        creativity, and problem-solving.
+      </p>
+      <p>
+        I’m currently working as an IT Analyst student worker while pursuing my degree. 
+        I’m excited to keep growing my skills and share my projects here.
+      </p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
 
-    <footer>
-      <p>© <span id="year"></span> Maria Ruiz Bravo • Built from scratch</p>
-    </footer>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python, Java, C, Verilog</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>SQL, Data Engineering</li>
+      <li>FPGA Design (Xilinx Vivado)</li>
+    </ul>
+  </section>
 
-    <script>
-      // smooth scrolling you already had
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetID = this.getAttribute('href');
-          const targetElement = document.querySelector(targetID);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Nutrition & Health Data Integration</h3>
+        <p>Combined nutrition, food prices, and portion data into a unified dataset for health-related insights.</p>
+      </div>
+      <div class="project-card">
+        <h3>FPGA Ping-Pong Game</h3>
+        <p>Designed a light pattern generator and FSM-based game using Verilog on the Nexys4 DDR board.</p>
+      </div>
+      <div class="project-card">
+        <h3>25¢ Vending Machine FSM</h3>
+        <p>Built a finite state machine for a digital vending machine, including coin validation and candy dispenser logic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>If you'd like to connect, feel free to reach out!</p>
+    <p>Email: <a href="mailto:maria@example.com">maria@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Maria Ruiz Bravo. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetID = this.getAttribute('href');
+        const targetElement = document.querySelector(targetID);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
       });
+    });
 
-      console.log("Welcome to Maria Bravo's Portfolio Site");
+    // Auto year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-      // auto year in footer
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+    console.log("Welcome to Maria Bravo's Portfolio Site");
+  </script>
+</body>
 </html>
+
