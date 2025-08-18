@@ -205,8 +205,8 @@ footer {
 #hero-aboutme {
   min-height: 10vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
   padding: 2rem;
   background:#C1D7F0;
 }
@@ -214,9 +214,8 @@ footer {
 #hero-aboutme h4{
   color: #000066;
   font-size: 1.5rem;
-  align-items: flex-start;
-  text-align: left;
 }
+
 /* About Me Section */
 #about-me {
   max-width: 1000px;
