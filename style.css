@@ -208,17 +208,11 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    #000000 0%, 
-    #000033 30%, 
-    #000066 80%, 
-    #0000ff 100%
-  );
+  background:#C1D7F0;
 }
 
 #hero-aboutme h4{
-  color: #FFFFFF;
+  color: #000066;
   font-size: 1.5rem;
   text-align: center;
 }
