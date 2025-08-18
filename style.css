@@ -202,7 +202,26 @@ footer {
 
 
 /* ABOUT ME PAGE STYLING */
+#hero-aboutme {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(
+    135deg,
+    #000000 0%, 
+    #000033 30%, 
+    #000066 80%, 
+    #0000ff 100%
+  );
+}
 
+#hero-aboutme h4{
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  text-align: center;
+}
 /* About Me Section */
 #about-me {
   max-width: 1000px;
