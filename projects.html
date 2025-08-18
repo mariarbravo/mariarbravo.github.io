@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maria Ruiz Bravo | Software Engineer</title>
+  <title>Maria Ruiz Bravo | Projects Overview</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,7 +11,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href= index.html> Maria Ruiz Bravo</a>
+        <a href="index.html">Maria Ruiz Bravo</a>
       </div>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
@@ -27,8 +27,84 @@
     </nav>
   </header>
 
-<section id="hero-sections">
-<h4> PROJECTS OVERVIEW </h4>
-</section>
+  <!-- Hero Section -->
+  <section id="hero-sections">
+    <h4>PROJECTS OVERVIEW</h4>
+  </section>
+
+  <!-- Projects Container -->
+  <main class="projects-container">
+
+    <!-- Project 1 -->
+    <section class="project-section" id="project1">
+      <h2>Nutrition & Health Data Integration</h2>
+      <div class="project-content">
+        <img src="nutrition-project.jpg" alt="Nutrition Project Screenshot">
+        <p>
+          Integrated nutrition, food prices, and portion data into a comprehensive dataset for
+          health-related insights. Developed tools to visualize trends and analyze key nutrients.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project 2 -->
+    <section class="project-section" id="project2">
+      <h2>FPGA Ping-Pong Game</h2>
+      <div class="project-content">
+        <img src="fpga-pingpong.jpg" alt="FPGA Ping-Pong Screenshot">
+        <p>
+          Designed a light pattern generator and FSM-based Ping-Pong game using Verilog on the Nexys4 DDR board.
+          Implemented smooth gameplay logic and LED animations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project 3 -->
+    <section class="project-section" id="project3">
+      <h2>25¢ Vending Machine FSM</h2>
+      <div class="project-content">
+        <img src="vending-machine.jpg" alt="Vending Machine Screenshot">
+        <p>
+          Built a finite state machine for a digital vending machine, including coin detection,
+          multiple-coin input handling, and candy dispensing logic. Designed using Verilog.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project 4 (Optional) -->
+    <section class="project-section" id="project4">
+      <h2>Web Portfolio Site</h2>
+      <div class="project-content">
+        <img src="portfolio-screenshot.jpg" alt="Portfolio Site Screenshot">
+        <p>
+          Built a personal portfolio website from scratch using HTML, CSS, and JavaScript.
+          Features smooth scrolling, responsive design, and interactive project showcases.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Maria Ruiz Bravo. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetID = this.getAttribute('href');
+        const targetElement = document.querySelector(targetID);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Auto year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
