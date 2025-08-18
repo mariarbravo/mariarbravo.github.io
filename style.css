@@ -205,7 +205,7 @@ footer {
 #hero-aboutme {
   min-height: 5vh;
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 2rem;
