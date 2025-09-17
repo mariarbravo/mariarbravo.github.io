@@ -502,3 +502,7 @@ footer {
  .btn:hover {
   background: #000099;
 }
+.center-img{
+  display:block;
+  margin: 0 auto;
+}
