@@ -490,15 +490,15 @@ footer {
 }
 
  .btn {
-  display: inline-block;
+  display: block;
+  margin: 20px; 
   padding: 0.7rem 1.5rem;
   background: #000066;
   color: #fff;
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  text-align: center;
-  transition: background 0.3s ease;
+   transition: background 0.3s ease;
 }
  .btn:hover {
   background: #000099;
