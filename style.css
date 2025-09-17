@@ -490,7 +490,7 @@ footer {
 }
 
  .btn {
-  display: block;
+  display: inline-block;
   margin: 20px auto; 
   padding: 0.7rem 1.5rem;
   background: #000066;
