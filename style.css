@@ -497,6 +497,7 @@ footer {
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
+  text-align: center;
   transition: background 0.3s ease;
 }
  .btn:hover {
