@@ -11,7 +11,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href= index.html> Maria Ruiz Bravo</a>
+        <a href="index.html">Maria Ruiz Bravo</a>
       </div>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
@@ -19,6 +19,7 @@
           <a href="projects.html">Projects ▼</a>
           <ul class="dropdown-menu">
             <li><a href="pandas.html">Nutritional</a></li>
+            <li><a href="projects-overview.html">Overview</a></li>
           </ul>
         </li>
         <li><a href="resume.html">Resume</a></li>
@@ -34,5 +35,16 @@
     <div style= "text-align: center;">  
   <a href= "Resume.pdf" download class = "btn"> Download Resume </a>
     </div>
+</body>
+</html>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Maria Ruiz Bravo. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
