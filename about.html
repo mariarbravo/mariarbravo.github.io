@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maria Ruiz Bravo | Software Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href= index.html> Maria Ruiz Bravo</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="projects.html">Projects ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="pandas.html">Nutritional</a></li>
+          </ul>
+        </li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section id="hero-sections">
+<h4> ABOUT ME </h4>
+</section>
+  <!-- About Me Section -->
+  <section id="about-me">
+    <img src="IMG_1346.JPG" alt="">
+    <div id="about-me-text">
+      <p>
+        Hi, I’m Maria! I’m a Software Engineering student with a strong interest in 
+        web development, data engineering, and digital logic design. I love creating 
+        clean and efficient solutions while exploring the intersection of technology, 
+        creativity, and problem-solving.
+      </p>
+      <p>
+        I’m currently working as an IT Analyst student worker while pursuing my degree. 
+        I’m excited to keep growing my skills and share my projects here.
+      </p>
+      <a href="contact.html" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Maria Ruiz Bravo. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetID = this.getAttribute('href');
+        const targetElement = document.querySelector(targetID);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Auto year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    console.log("Welcome to Maria Bravo's Portfolio Site");
+  </script>
+</body>
+</html>
+

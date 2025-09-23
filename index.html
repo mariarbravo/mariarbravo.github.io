@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maria Ruiz Bravo | Software Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">Maria Ruiz Bravo</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="projects.html">Projects ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="pandas.html">Nutritional</a></li>
+            <li><a href="projects-overview.html">Overview</a></li>
+          </ul>
+        </li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-container">
+      <div class="overlay-text">
+        <h1>Hi, I'm Maria</h1>
+        <p>Aspiring Software Engineer passionate about building cool things.</p>
+        <p>I love learning new technologies and building projects that help people.</p>
+        <p>My goal is to create software that makes a positive impact.</p>
+        <a href="projects-overview.html" class="btn">View My Work</a>
+      </div>
+      <div id="hero-image">
+        <img src="pngcmd.png" alt="Maria Ruiz Bravo profile image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Maria Ruiz Bravo. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
