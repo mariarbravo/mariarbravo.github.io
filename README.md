@@ -49,16 +49,6 @@ Resume.pdf    Current résumé
 
 The old `about.html`, `projects.html`, `resume.html` and `contact.html` pages redirect to the matching section of the main page.
 
-## Run it locally
-
-```bash
-git clone https://github.com/mariarbravo/mariarbravo.github.io.git
-cd mariarbravo.github.io
-python3 -m http.server 8000
-```
-
-Then open http://localhost:8000. A local server is needed because the page loads JavaScript modules.
-
 ## Contact
 
 - Email: [mariapauruizb@gmail.com](mailto:mariapauruizb@gmail.com)
