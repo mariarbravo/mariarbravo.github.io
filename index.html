@@ -1,57 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-webgl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maria Ruiz Bravo | Software Engineer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Bravo | Software Engineer</title>
+  <meta name="description" content="Portfolio of Maria Bravo, Software Engineering student at the University of Arizona. Explore full-stack, data, AI and research projects through an interactive New York City skyline." />
+  <meta property="og:title" content="Maria Bravo | Software Engineer" />
+  <meta property="og:description" content="Explore my projects as buildings in an interactive NYC skyline." />
+  <meta property="og:image" content="https://mariarbravo.github.io/pngcmd.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+
   <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html">Maria Ruiz Bravo</a>
-      </div>
+  <header class="topbar">
+    <a class="brand" href="#top">Maria<span class="brand-rest"> Bravo</span></a>
+    <nav aria-label="Quick view">
       <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li class="dropdown">
-          <a href="projects.html">Projects ▼</a>
-          <ul class="dropdown-menu">
-            <li><a href="pandas.html">Nutritional</a></li>
-            <li><a href="projects-overview.html">Overview</a></li>
-          </ul>
-        </li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="nav-optional"><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Résumé</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-container">
-      <div class="overlay-text">
-        <h1>Hi, I'm Maria</h1>
-        <p>Aspiring Software Engineer passionate about building cool things.</p>
-        <p>I love learning new technologies and building projects that help people.</p>
-        <p>My goal is to create software that makes a positive impact.</p>
-        <a href="projects-overview.html" class="btn">View My Work</a>
+  <!-- SKYLINE HERO -->
+  <section id="top" class="hero" aria-label="Interactive New York City skyline">
+    <div id="city" class="city" aria-hidden="true"></div>
+    <div class="city-fallback" aria-hidden="true"></div>
+    <div id="labels" class="labels"></div>
+
+    <div class="hero-text">
+      <p class="eyebrow">Software Engineering · University of Arizona</p>
+      <h1>Hi, I'm Maria.</h1>
+      <p class="lede">I build full-stack apps, data pipelines, and AI tools, from Spring Boot and React to Python and C. Each building in this skyline is one of my projects.</p>
+      <div class="hero-actions" id="hero-actions">
+        <a href="#projects" class="btn btn-primary">Quick view of projects</a>
+        <a href="Resume.pdf" class="btn btn-ghost" download>Download résumé</a>
       </div>
-      <div id="hero-image">
-        <img src="pngcmd.png" alt="Maria Ruiz Bravo profile image">
+      <p class="hint" id="hint">Drag to look around · click a glowing building</p>
+    </div>
+
+    <div id="tour-bar" class="tour-bar" hidden>
+      <p id="tour-caption" class="tour-caption" aria-live="polite"></p>
+      <div class="tour-controls">
+        <span id="tour-step" class="tour-step"></span>
+        <button type="button" id="tour-mute" class="tour-btn" aria-pressed="false">🔊 Sound on</button>
+        <button type="button" id="tour-next" class="tour-btn">Next ›</button>
+        <button type="button" id="tour-stop" class="tour-btn">End tour</button>
       </div>
     </div>
+
+    <aside id="panel" class="panel" aria-live="polite" hidden>
+      <button class="panel-close" id="panel-close" aria-label="Close project">×</button>
+      <div id="panel-body"></div>
+    </aside>
   </section>
 
-  <!-- Footer -->
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="about">
+        <img src="IMG_1346.JPG" alt="Maria Bravo" class="about-photo" loading="lazy" />
+        <div>
+          <h2>About me</h2>
+          <p>I'm a Software Engineering student at the University of Arizona (GPA 3.84), graduating with my B.S. in May 2027 and continuing in the accelerated M.S. in Electrical and Computer Engineering through May 2028.</p>
+          <p>I like building things end to end: REST APIs and databases, React front ends, data pipelines, and AI tools. Right now I'm researching AI time-series forecasting for digital twins, leading the software side of my senior capstone, and supporting campus technology as an IT Analyst.</p>
+          <a href="#contact" class="btn btn-primary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li>
+          <p class="when">Sep 2026 – Present</p>
+          <h3>Senior Capstone · Team Member</h3>
+          <p class="where">Accelerated Computational Physics Algorithms for Optical Simulations Software</p>
+          <ul>
+            <li>Translate optical simulation and stakeholder requirements into software architecture, implementation tasks, and integration plans as one of two Software Engineering members on a multidisciplinary team.</li>
+            <li>Own the team's GitHub repository and Jira board: Git workflows, Agile sprint planning, task tracking, and documentation.</li>
+            <li>Drive planning and stakeholder coordination with Gantt charts, schedules, milestones, and SRD/PDR deliverables.</li>
+          </ul>
+        </li>
+        <li>
+          <p class="when">Jan 2026 – Present</p>
+          <h3>Undergraduate Research Assistant</h3>
+          <p class="where">University of Arizona</p>
+          <ul>
+            <li>Research AI-based time-series forecasting for Digital Twin applications using physical-system data.</li>
+            <li>Implement and evaluate Chronos-2 models in Python, using Pandas and NumPy for data processing and forecast analysis.</li>
+          </ul>
+        </li>
+        <li>
+          <p class="when">May 2025 – Present</p>
+          <h3>Student Worker IT Analyst</h3>
+          <p class="where">University Technology and Information Services</p>
+          <ul>
+            <li>Support staff and Facilities Management personnel across 17+ specialized service groups, troubleshooting hardware, software, account, printer, and endpoint issues through ServiceNow.</li>
+            <li>Configure, image, deploy, and troubleshoot Windows laptops and workstations across university departments.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="facts">
+        <div class="fact">
+          <h3>Education</h3>
+          <p><strong>The University of Arizona</strong>, Tucson</p>
+          <p>B.S. Software Engineering · GPA 3.837 · May 2027</p>
+          <p>Accelerated M.S. Electrical and Computer Engineering · May 2028</p>
+        </div>
+        <div class="fact">
+          <h3>Skills</h3>
+          <ul class="tags">
+            <li>Java</li><li>Python</li><li>C</li><li>C++</li><li>SQL</li><li>TypeScript</li><li>Spring Boot</li><li>React</li><li>Hibernate/JPA</li><li>Pandas</li><li>NumPy</li><li>PostgreSQL</li><li>Amazon Aurora</li><li>MongoDB</li><li>AWS</li><li>Docker</li><li>Git/GitHub</li><li>Jira</li><li>ServiceNow</li><li>REST APIs</li>
+          </ul>
+          <p class="soft">Agile/Scrum · technical documentation · requirements analysis · project planning · stakeholder communication · troubleshooting · cross-functional collaboration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p class="section-sub">Every project has a landmark in the skyline above.</p>
+      <div class="cards">
+
+        <article class="card" data-id="events" data-landmark="Madison Square Garden">
+          <div class="card-art art-events" role="img" aria-label="Event Management System"><span>Spring Boot · React · PostgreSQL</span></div>
+          <div class="card-body">
+            <p class="card-meta">Jan – May 2026</p>
+            <h3>Event Management System</h3>
+            <p>Full-stack event management app built with Spring Boot, React, PostgreSQL, JPA, and JWT. Developed REST APIs for event creation, registration, authentication, and persistent data, designed relational PostgreSQL data models, and integrated the backend with a React/Vite frontend.</p>
+            <ul class="tags"><li>Java</li><li>Spring Boot</li><li>React</li><li>PostgreSQL</li><li>JPA</li><li>JWT</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-id="nutrition" data-landmark="Empire State Building">
+          <img src="nutrition.png" alt="Nutrition Assistant app screenshot" loading="lazy" />
+          <div class="card-body">
+            <p class="card-meta">Aug – Dec 2025</p>
+            <h3>Nutrition Assistant</h3>
+            <p>Python and Streamlit nutrition app with a Pandas ETL pipeline that transforms CSV datasets, plus the OpenAI API for agent-based user interaction. Deployed MySQL on AWS RDS and queried the cloud-hosted nutrition data with SQL.</p>
+            <ul class="tags"><li>Python</li><li>Streamlit</li><li>Pandas</li><li>OpenAI API</li><li>MySQL</li><li>AWS RDS</li></ul>
+            <div class="card-links"><a href="pandas.html">Watch the demo →</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-id="research" data-landmark="30 Hudson Yards · The Edge">
+          <div class="card-art art-research" role="img" aria-label="Digital Twin forecasting research"><span>Chronos-2 · time-series forecasting</span></div>
+          <div class="card-body">
+            <p class="card-meta">Research · Jan 2026 – Present</p>
+            <h3>AI Forecasting for Digital Twins</h3>
+            <p>Undergraduate research on AI-based time-series forecasting for Digital Twin applications using physical-system data. I implement and evaluate Chronos-2 models in Python, using Pandas and NumPy for data processing and forecast analysis.</p>
+            <ul class="tags"><li>Python</li><li>Chronos-2</li><li>Pandas</li><li>NumPy</li><li>Time series</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-id="capstone" data-landmark="One Vanderbilt">
+          <div class="card-art art-capstone" role="img" aria-label="Optical simulation capstone"><span>Optical simulation software</span></div>
+          <div class="card-body">
+            <p class="card-meta">Senior Capstone · Sep 2026 – Present</p>
+            <h3>Accelerated Physics Algorithms for Optical Simulation</h3>
+            <p>One of two Software Engineering members on a multidisciplinary team. I turn sponsor requirements into the software architecture and plan, own the team's GitHub and Jira, and run Agile sprints, schedules, and SRD/PDR deliverables.</p>
+            <ul class="tags"><li>Architecture</li><li>Git workflows</li><li>Jira</li><li>Agile/Scrum</li><li>SRD/PDR</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-id="social" data-landmark="One World Trade Center">
+          <img src="nodes.png" alt="Social network graph visualization" loading="lazy" />
+          <div class="card-body">
+            <h3>Social Network Graph Analyzer</h3>
+            <p>Built a C++ program that models a social network with graphs, identifies the most influential user, and displays nearby account connections using object-oriented design and STL data structures.</p>
+            <ul class="tags"><li>C++</li><li>Graphs</li><li>OOP</li><li>STL</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-id="trains" data-landmark="Chrysler Building">
+          <img src="gameoftrains.png" alt="Game of Trains output" loading="lazy" />
+          <div class="card-body">
+            <h3>Game of Trains</h3>
+            <p>Developed a C program simulating a multi-player card game with custom decks, player actions, and strategic gameplay. Implemented arrays, structures, dynamic memory, shuffle, deal, and sorting algorithms.</p>
+            <ul class="tags"><li>C</li><li>Dynamic memory</li><li>Algorithms</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-id="fpga" data-landmark="Flatiron Building">
+          <img src="stoplight.jpeg" alt="FPGA board running the game" loading="lazy" />
+          <div class="card-body">
+            <h3>FPGA Ping-Pong Game</h3>
+            <p>Designed a light pattern generator and FSM-based Ping-Pong game using Verilog on the Nexys4 DDR board, with smooth gameplay logic and LED animations.</p>
+            <ul class="tags"><li>Verilog</li><li>FSM</li><li>Nexys4 DDR</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-id="srs" data-landmark="432 Park Avenue">
+          <img src="enterprisearchitect.png" alt="Enterprise Architect UML diagram" loading="lazy" />
+          <div class="card-body">
+            <h3>SRS Documentation with Enterprise Architect</h3>
+            <p>Collaborated to create a comprehensive SRS document in Enterprise Architect modeling functional and non-functional requirements, with UML diagrams, system workflows, and detailed technical documentation. Awarded first place for best SRS.</p>
+            <ul class="tags"><li>UML</li><li>Requirements</li><li>Enterprise Architect</li><li>🏆 1st place</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-id="accounting" data-landmark="Woolworth Building">
+          <img src="accountant.png" alt="Accounting PDF data extraction" loading="lazy" />
+          <div class="card-body">
+            <h3>Accounting PDF Data Algorithm</h3>
+            <p>Developed an algorithm to extract structured tabular data from unstructured accounting PDF files. Implemented parsing logic, error handling, and data cleaning to manage irregular formats and inconsistencies in financial statements.</p>
+            <ul class="tags"><li>PDF parsing</li><li>Data cleaning</li><li>Error handling</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-id="portfolio" data-landmark="Citigroup Center">
+          <img src="onlineportfolio.png" alt="Portfolio website" loading="lazy" />
+          <div class="card-body">
+            <h3>This Portfolio</h3>
+            <p>Built from scratch with HTML, CSS, and JavaScript. The skyline is rendered with Three.js, and the buildings, windows, and lighting are generated in code with custom shaders.</p>
+            <ul class="tags"><li>JavaScript</li><li>Three.js</li><li>WebGL</li><li>CSS</li></ul>
+            <div class="card-links"><a href="https://github.com/mariarbravo/mariarbravo.github.io" target="_blank" rel="noopener">View source →</a></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="section">
+      <h2>Résumé</h2>
+      <div class="resume">
+        <a href="Resume.pdf" target="_blank" rel="noopener"><img src="Resume.png" alt="Résumé of Maria Bravo" loading="lazy" /></a>
+        <div class="hero-actions">
+          <a href="Resume.pdf" class="btn btn-primary" download>Download PDF</a>
+          <a href="Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div>
+          <p>Have an opportunity, a project in mind, or just want to say hi? Reach out.</p>
+          <p><strong>Email:</strong> <a href="mailto:mariapauruizb@gmail.com">mariapauruizb@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mariarbravo" target="_blank" rel="noopener">mariarbravo</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/mariarbravo" target="_blank" rel="noopener">mariarbravo</a></p>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/meozbzky" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="_replyto" placeholder="you@company.com" required />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; <span id="year"></span> Maria Ruiz Bravo. All Rights Reserved.</p>
+    <p>&copy; <span id="year"></span> Maria Bravo</p>
   </footer>
 
-  <script src="script.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script type="module" src="city.js"></script>
 </body>
 </html>

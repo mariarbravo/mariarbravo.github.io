@@ -2,50 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maria Ruiz Bravo | Nutrition Database & AI Nutritionist</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrition Assistant | Maria Bravo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html">Maria Ruiz Bravo</a>
-      </div>
+  <header class="topbar solid">
+    <a class="brand" href="index.html">Maria<span class="brand-rest"> Bravo</span></a>
+    <nav aria-label="Main">
       <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li class="dropdown">
-          <a href="projects.html">Projects ▼</a>
-          <ul class="dropdown-menu">
-            <li><a href="projects.html">Overview</a></li>
-            <li><a href="pandas.html">Nutritional</a></li>
-          </ul>
-        </li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#resume">Résumé</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero-sections">
-    <h4>DATA ENGINEERING PROJECT: NUTRITION DATABASE AND AI NUTRITIONIST</h4>
-  </section>
-
-  <!-- Video Section -->
-  <section id="video" class="projects-container">
-    <video width="1000" controls>
-      <source src="AIMealPlanner.mp4" type="video/mp4">
+  <main class="page">
+    <a class="back" href="index.html#projects">← Back to projects</a>
+    <h1>Nutrition Assistant</h1>
+    <p>A Python and Streamlit nutrition app: a Pandas ETL pipeline transforms CSV datasets, the OpenAI API powers agent-based interaction, and the nutrition data lives in MySQL on AWS RDS.</p>
+    <video controls preload="metadata" poster="nutrition.png">
+      <source src="AIMealPlanner.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  </section>
+  </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Maria Ruiz Bravo. All Rights Reserved.</p>
+    <p>&copy; <span id="year"></span> Maria Bravo</p>
   </footer>
-
-  <!-- External JS -->
-  <script src="script.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
