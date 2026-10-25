@@ -620,12 +620,13 @@ function init() {
   const tourBar = document.getElementById('tour-bar');
   const tourCaption = document.getElementById('tour-caption');
   const tourStep = document.getElementById('tour-step');
-  let tour = null
+  let tour = null;
 
   function playStop(i, fly = true) {
     if (!tour) return;
     if (i >= TOUR.length) { endTour(); return; }
     tour.i = i;
+    clearTimeout(tour.timer);
     const stop = TOUR[i];
     const l = stop.id && LANDMARKS.find((o) => o.id === stop.id);
     tourCaption.textContent = stop.text;
@@ -637,10 +638,13 @@ function init() {
       if (l) flyTo({ ...framing(l, view.theta + 0.35), shiftX: 0, shiftY: narrow ? 0.16 : 0.08 }, 2000);
       else flyTo({ ...overviewState(), theta: view.theta + 0.4 }, 2400);
     }
+    // Give visitors time to read the caption, then move on.
+    const words = stop.text.split(/\s+/).length;
+    tour.timer = setTimeout(() => playStop(i + 1), Math.max(5000, words * 330));
   }
   function startTour() {
     if (selected) { selected = null; panel.hidden = true; }
-    tour = { i: 0};
+    tour = { i: 0, timer: 0 };
     hero.classList.add('touring');
     tourBar.hidden = false;
     hint.hidden = true;
@@ -648,6 +652,7 @@ function init() {
   }
   function endTour(fly = true) {
     if (!tour) return;
+    clearTimeout(tour.timer);
     tour = null;
     tourBar.hidden = true;
     hero.classList.remove('touring');

@@ -2,7 +2,7 @@
 
 **Live site: [mariarbravo.github.io](https://mariarbravo.github.io)**
 
-My personal portfolio, built as an interactive 3D New York City skyline at night. Every project I've worked on is a real NYC landmark: click a building to fly to it and read about the project, or take the narrated guided tour.
+My personal portfolio, built as an interactive 3D New York City skyline at night. Every project I've worked on is a real NYC landmark: click a building to fly to it and read about the project, or take the guided tour.
 
 I'm a Software Engineering student at the University of Arizona (B.S. May 2027, accelerated M.S. in Electrical and Computer Engineering May 2028).
 
@@ -24,7 +24,7 @@ I'm a Software Engineering student at the University of Arizona (B.S. May 2027, 
 ## Features
 
 - **Interactive 3D city.** Drag to look around (swipe on phones), and hover or tap a building to see its project.
-- **Guided tour.** A narrated fly-through of every landmark using the browser's built-in voice, with on-screen captions and a mute button.
+- **Guided tour.** A fly-through of every landmark with on-screen captions that introduce each project.
 - **Quick view for recruiters.** Below the skyline is a plain, fast layout with About, Experience, Projects, Résumé and Contact, all reachable from the top bar.
 - **Made in code.** The buildings, lit windows, traffic, Brooklyn Bridge, and Statue of Liberty are all generated with JavaScript and custom shaders. There are no 3D model files to download.
 - **Works everywhere.** A lighter version runs on phones, devices without WebGL get a flat skyline, and motion is reduced for visitors who prefer it.
@@ -33,7 +33,6 @@ I'm a Software Engineering student at the University of Arizona (B.S. May 2027, 
 
 - HTML, CSS, and JavaScript (no build step)
 - [Three.js](https://threejs.org/) for the 3D rendering, with custom GLSL shaders for the windows and lights
-- Web Speech API for the tour narration
 - [Formspree](https://formspree.io/) for the contact form
 - Hosted for free on GitHub Pages
 
