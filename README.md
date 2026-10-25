@@ -1,4 +1,4 @@
-# Maria Bravo · Portfolio
+F# Maria Bravo · Portfolio
 
 **Live site: [mariarbravo.github.io](https://mariarbravo.github.io)**
 
@@ -25,7 +25,7 @@ I'm a Software Engineering student at the University of Arizona (B.S. May 2027, 
 
 - **Interactive 3D city.** Drag to look around (swipe on phones), and hover or tap a building to see its project.
 - **Guided tour.** A fly-through of every landmark with on-screen captions that introduce each project.
-- **Quick view for recruiters.** Below the skyline is a plain, fast layout with About, Experience, Projects, Résumé and Contact, all reachable from the top bar.
+- **Quick view for recruiters.** Below the skyline is a plain, fast layout with About, Experience, Projects, Resume and Contact, all reachable from the top bar.
 - **Made in code.** The buildings, lit windows, traffic, Brooklyn Bridge, and Statue of Liberty are all generated with JavaScript and custom shaders. There are no 3D model files to download.
 - **Works everywhere.** A lighter version runs on phones, devices without WebGL get a flat skyline, and motion is reduced for visitors who prefer it.
 
@@ -39,11 +39,11 @@ I'm a Software Engineering student at the University of Arizona (B.S. May 2027, 
 ## Project structure
 
 ```
-index.html    Main page: skyline, about, experience, projects, résumé, contact
+index.html    Main page: skyline, about, experience, projects, resume, contact
 city.js       The 3D city, landmarks, camera controls and guided tour
 site.css      All styles
 pandas.html   Nutrition Assistant demo video
-Resume.pdf    Current résumé
+Resume.pdf    Current resume
 ```
 
 The old `about.html`, `projects.html`, `resume.html` and `contact.html` pages redirect to the matching section of the main page.
