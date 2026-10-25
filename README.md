@@ -1,4 +1,4 @@
-F# Maria Bravo · Portfolio
+# Maria Bravo · Portfolio
 
 **Live site: [mariarbravo.github.io](https://mariarbravo.github.io)**
 
