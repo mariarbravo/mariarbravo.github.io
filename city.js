@@ -26,7 +26,6 @@ const LANDMARKS = [
   { id: 'portfolio',  short: 'This site',       x: 3.45, z: -12,   build: citigroup },
 ];
 
-// Narration for the guided tour, read aloud by the browser's built-in voice.
 const TOUR = [
   { text: "Hi, I'm Maria Bravo, a Software Engineering student at the University of Arizona, continuing into the accelerated master's in Electrical and Computer Engineering. Welcome to my city. Every landmark here is something I've built." },
   { id: 'events', text: "Madison Square Garden hosts New York's biggest events, so it's home to my Event Management System. It's a full-stack app built with Spring Boot, React, and PostgreSQL, with REST APIs and JWT authentication." },
@@ -39,7 +38,7 @@ const TOUR = [
   { id: 'srs', text: "432 Park is the requirements document that won my class first place." },
   { id: 'accounting', text: "The Woolworth Building pulls clean tables out of messy accounting PDFs." },
   { id: 'portfolio', text: "And Citigroup Center is this website, with every building, window, and light generated in code." },
-  { text: "I also keep the university running as an IT Analyst. Scroll down for my résumé, or say hello through the contact form. Thanks for visiting!" },
+  { text: "I also keep the university running as an IT Analyst. Scroll down for my resume, or say hello through the contact form. Thanks for visiting!" },
 ];
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -621,40 +620,12 @@ function init() {
   const tourBar = document.getElementById('tour-bar');
   const tourCaption = document.getElementById('tour-caption');
   const tourStep = document.getElementById('tour-step');
-  const muteBtn = document.getElementById('tour-mute');
-  const synth = 'speechSynthesis' in window ? speechSynthesis : null;
-  let tour = null, muted = !synth;
-  if (!synth) muteBtn.hidden = true;
+  let tour = null
 
-  function pickVoice() {
-    const voices = synth?.getVoices().filter((v) => /^en(-|_|$)/i.test(v.lang)) || [];
-    const nice = /natural|neural|online|samantha|aria|jenny|ava|allison|google us english|zira/i;
-    return voices.find((v) => nice.test(v.name) && /us/i.test(v.lang)) || voices.find((v) => nice.test(v.name)) || voices.find((v) => /us/i.test(v.lang)) || voices[0] || null;
-  }
-  // Speak one stop. Chrome stops long utterances early, so go sentence by sentence.
-  function narrate(text, done) {
-    const token = tour.token;
-    const finish = () => { if (tour && tour.token === token) done(); };
-    const words = text.split(/\s+/).length;
-    clearTimeout(tour.timer);
-    if (muted) { tour.timer = setTimeout(finish, Math.max(4500, words * 330)); return; }
-    synth.cancel();
-    const voice = pickVoice();
-    const parts = text.match(/[^.!?]+[.!?]*/g);
-    parts.forEach((part, i) => {
-      const u = new SpeechSynthesisUtterance(part.trim());
-      if (voice) { u.voice = voice; u.lang = voice.lang; }
-      u.rate = 1.02;
-      if (i === parts.length - 1) u.onend = () => { clearTimeout(tour?.timer); if (tour) tour.timer = setTimeout(finish, 700); };
-      synth.speak(u);
-    });
-    // Safety net in case the browser never reports the end of speech.
-    tour.timer = setTimeout(finish, words * 520 + 4000);
-  }
   function playStop(i, fly = true) {
     if (!tour) return;
     if (i >= TOUR.length) { endTour(); return; }
-    tour.i = i; tour.token++;
+    tour.i = i;
     const stop = TOUR[i];
     const l = stop.id && LANDMARKS.find((o) => o.id === stop.id);
     tourCaption.textContent = stop.text;
@@ -666,11 +637,10 @@ function init() {
       if (l) flyTo({ ...framing(l, view.theta + 0.35), shiftX: 0, shiftY: narrow ? 0.16 : 0.08 }, 2000);
       else flyTo({ ...overviewState(), theta: view.theta + 0.4 }, 2400);
     }
-    narrate(stop.text, () => playStop(i + 1));
   }
   function startTour() {
     if (selected) { selected = null; panel.hidden = true; }
-    tour = { i: 0, token: 0, timer: 0 };
+    tour = { i: 0};
     hero.classList.add('touring');
     tourBar.hidden = false;
     hint.hidden = true;
@@ -678,9 +648,7 @@ function init() {
   }
   function endTour(fly = true) {
     if (!tour) return;
-    clearTimeout(tour.timer);
     tour = null;
-    synth?.cancel();
     tourBar.hidden = true;
     hero.classList.remove('touring');
     selected = null;
@@ -695,13 +663,6 @@ function init() {
   document.getElementById('hero-actions').prepend(tourBtn);
   document.getElementById('tour-next').addEventListener('click', () => tour && playStop(tour.i + 1));
   document.getElementById('tour-stop').addEventListener('click', () => endTour());
-  muteBtn.addEventListener('click', () => {
-    muted = !muted;
-    muteBtn.textContent = muted ? '🔇 Sound off' : '🔊 Sound on';
-    muteBtn.setAttribute('aria-pressed', String(muted));
-    if (muted) synth.cancel();
-    if (tour) playStop(tour.i, false);
-  });
 
   // "See it on the skyline" buttons on the quick-view cards
   LANDMARKS.forEach((l) => {
